@@ -7,6 +7,8 @@ app = Flask(__name__)
 def hello():
     url = 'https://revealer-test-1.azurewebsites.net'
     r = requests.get(url = url)
-    data = r.json()
-    print data
-    return "Hello, World!"
+    data = r.text
+    print(r.status_code)
+    print(data)
+    output = "Hello, World with {} & {} from {}!".format(r.text, r.status_code, url)
+    return output
