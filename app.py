@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    url = 'https://revealer-test-1.azurewebsites.net'
+    url = 'https://private-endpoint-dot-net.azurewebsites.net'
     r = requests.get(url = url)
     data = r.text
     print(r.status_code)
